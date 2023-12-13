@@ -22,7 +22,7 @@ const totalPages = books.reduce((sum, book) => sum + book.pages, 0);
   
 // Combining filter and reduce to get the average number of pages for books published before the year 1960
 const booksBefore1960 = books.filter(book => book.year < 1960);
-const averagePagesBefore1960 = math.floor(booksBefore1960.reduce((sum, book) => sum + book.pages, 0) / booksBefore1960.length);
+const averagePagesBefore1960 = Math.floor(booksBefore1960.reduce((sum, book) => sum + book.pages, 0) / booksBefore1960.length);
   
 // Combining map and filter to get the titles and authors of all fiction books
 const fictionBooks = books.filter(book => book.genre === 'Fiction').map(book => ({ title: book.title, author: book.author }));
