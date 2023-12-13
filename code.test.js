@@ -1,3 +1,8 @@
+const fs = require('fs');
+const assert = require('assert');
+
+eval(fs.readFileSync('code.js')+'');
+
 const books = [
     { title: 'The Catcher in the Rye', author: 'J.D. Salinger', pages: 224, year: 1951, genre: 'Fiction' },
     { title: 'To Kill a Mockingbird', author: 'Harper Lee', pages: 336, year: 1960, genre: 'Fiction' },
@@ -10,10 +15,6 @@ const books = [
     { title: 'Harry Potter and the Sorcerers Stone', author: 'J.K. Rowling', pages: 309, year: 1997, genre: 'Fantasy' },
     { title: 'The Hobbit', author: 'J.R.R. Tolkien', pages: 310, year: 1937, genre: 'Fantasy' },
 ];
-
-const fs = require('fs');
-const assert = require('assert');
-eval(fs.readFileSync('code.js')+'');
 
 assert(bookTitles, [
     'The Catcher in the Rye',
@@ -32,9 +33,9 @@ assert(booksAfter1990, [
     { title: 'Harry Potter and the Sorcerers Stone', author: 'J.K. Rowling', pages: 309, year: 1997, genre: 'Fantasy' }
 ]);
 
-assert(totalPages, 4221);
+assert(totalPages, 3872);
 
-assert(averagePagesBefore1960, 468.3);
+assert(averagePagesBefore1960, 401);
 
 assert(fictionBooks, [
     { title: 'The Catcher in the Rye', author: 'J.D. Salinger' },
