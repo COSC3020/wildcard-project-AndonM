@@ -16,6 +16,14 @@ const books = [
     { title: 'The Hobbit', author: 'J.R.R. Tolkien', pages: 310, year: 1937, genre: 'Fantasy' },
 ];
 
+const bookTitles = books.map(book => book.title);
+const booksAfter1990 = books.filter(book => book.year > 1990);
+const totalPages = books.reduce((sum, book) => sum + book.pages, 0);
+const booksBefore1960 = books.filter(book => book.year < 1960);
+const averagePagesBefore1960 = Math.floor(booksBefore1960.reduce((sum, book) => sum + book.pages, 0) / booksBefore1960.length);
+const fictionBooks = books.filter(book => book.genre === 'Fiction').map(book => ({ title: book.title, author: book.author }));
+const concatenateTitles = books.reduce((titles, book) => titles + book.title + ', ', '').slice(0, -2);
+
 assert(bookTitles, [
     'The Catcher in the Rye',
     'To Kill a Mockingbird',
